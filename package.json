@@ -1,5 +1,5 @@
 {
-  "name": "ipa-cert",
+  "name": "ipa-rename",
   "version": "1.0.0",
   "description": "将ipa文件重命名，重命名的格式`[ipa包名]--[证书名].ipa`",
   "main": "index.js",
