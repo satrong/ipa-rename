@@ -42,7 +42,7 @@ module.exports = () => {
     }
 
     if (argv.length === 3 && ['-v', '-V', '--version'].indexOf(argv[2]) > -1) {
-        return console.log(require(path.join(__dirname, '../package.json')).version);
+        return console.log(require(path.join(__dirname, './package.json')).version);
     }
 
     const filepaths = process.argv.slice(2);
