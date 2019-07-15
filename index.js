@@ -30,15 +30,17 @@ const getIpasAndRename = async filepath => {
 };
 
 
-if (process.argv.length === 2) {
-    console.log('请指定目录或ipa文件');
-    return process.exit(0);
-}
-
-const filepaths = process.argv.slice(2);
-
-(async () => {
-    for (let i = 0, len = filepaths.length; i < len; i++) {
-        await getIpasAndRename(filepaths[i]);
+module.exports = () => {
+    if (process.argv.length === 2) {
+        console.log('请指定目录或ipa文件');
+        return process.exit(0);
     }
-})();
+
+    const filepaths = process.argv.slice(2);
+
+    (async () => {
+        for (let i = 0, len = filepaths.length; i < len; i++) {
+            await getIpasAndRename(filepaths[i]);
+        }
+    })();
+}
