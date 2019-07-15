@@ -31,9 +31,14 @@ const getIpasAndRename = async filepath => {
 
 
 module.exports = () => {
-    if (process.argv.length === 2) {
+    const argv = process.argv;
+    if (argv.length === 2) {
         console.log('请指定目录或ipa文件');
         return process.exit(0);
+    }
+
+    if (argv.length === 3 && ['-v', '-V', '--version'].indexOf(argv[2]) > -1) {
+        return console.log(require(path.join(__dirname, '../package.json')).version);
     }
 
     const filepaths = process.argv.slice(2);
