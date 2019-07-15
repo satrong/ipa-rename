@@ -1,0 +1,20 @@
+{
+  "name": "ipa-cert",
+  "version": "1.0.0",
+  "description": "将ipa文件重命名，重命名的格式`[ipa包名]--[证书名].ipa`",
+  "main": "index.js",
+  "bin": {
+    "ipa-rename": "bin/ipa-rename"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipa rename"
+  ],
+  "author": "satrong",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  }
+}
