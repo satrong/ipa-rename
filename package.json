@@ -1,7 +1,7 @@
 {
   "name": "ipa-rename",
   "version": "1.0.0",
-  "description": "将ipa文件重命名，重命名的格式`[ipa包名]--[证书名].ipa`",
+  "description": "将ipa文件重命名，重命名的格式`[ipa包名]--[证书名].ipa`。只支持macOS系统！",
   "main": "index.js",
   "bin": {
     "ipa-rename": "bin/ipa-rename"
@@ -13,6 +13,10 @@
     "ipa rename"
   ],
   "author": "satrong",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:satrong/ipa-rename.git"
+  },
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^8.1.0"
