@@ -13,19 +13,23 @@ const rename = async filepath => {
         const plist = await GetPlistInfo();
         fileRename(filepath, getName(plist));
     } catch (err) {
-        console.error(err);
+        console.error(`文件${filepath}处理出错`);
     }
 };
 
 // 获取ipa文件并重命名
 const getIpasAndRename = async filepath => {
-    const isAbsolute = path.isAbsolute(filepath);
-    if (!isAbsolute) {
-        filepath = path.join(process.cwd(), filepath);
-    }
-    const ipaFilepaths = getIpas(filepath);
-    for (let i = 0, len = ipaFilepaths.length; i < len; i++) {
-        await rename(ipaFilepaths[i]);
+    try {
+        const isAbsolute = path.isAbsolute(filepath);
+        if (!isAbsolute) {
+            filepath = path.join(process.cwd(), filepath);
+        }
+        const ipaFilepaths = getIpas(filepath);
+        for (let i = 0, len = ipaFilepaths.length; i < len; i++) {
+            await rename(ipaFilepaths[i]);
+        }
+    } catch (err) {
+        console.error(err);
     }
 };
 
